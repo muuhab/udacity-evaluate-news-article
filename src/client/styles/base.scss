@@ -12,3 +12,27 @@ section {
     max-width: 800px;
     margin: 50px auto;
 }
+
+.result {
+    display: flex;
+    // align-items: center;
+    flex-direction: column;
+    position: absolute;
+    left: 50%;
+    top: 35%;
+    transform: translateX(-50%);
+}
+.result strong{
+    font-size:30px ;
+    color: #be8c00;
+}
+
+.result div {
+    margin: 20px 0;
+    display: inline;
+    font-weight: bolder;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.result span{
+    font-weight: normal;
+}
