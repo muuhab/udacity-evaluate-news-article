@@ -1,48 +1,59 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <title>Test</title>
-        <link rel="stylesheet" href="/styles/resets.scss">
-        <link rel="stylesheet" href="/styles/base.scss">
-        <link rel="stylesheet" href="/styles/header.scss">
-        <link rel="stylesheet" href="/styles/form.scss">
-        <link rel="stylesheet" href="/styles/footer.scss">
-    </head>
 
-    <body>
+<head>
+    <meta charset="utf-8">
+    <title>Test</title>
+    <link rel="stylesheet" href="/styles/resets.scss">
+    <link rel="stylesheet" href="/styles/base.scss">
+    <link rel="stylesheet" href="/styles/header.scss">
+    <link rel="stylesheet" href="/styles/form.scss">
+    <link rel="stylesheet" href="/styles/footer.scss">
+</head>
 
-        <header>
-            <div class="">
-                Logo
-            </div>
-            <div class="">
-                navigation
-            </div>
-        </header>
+<body>
 
-        <main>
-            <section>
-                <form class="" onsubmit="return Client.handleSubmit(event)">
-                    <input id="name" type="text" name="input" placeholder="Name">
-                    <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
-                </form>
-            </section>
+    <header>
+        <div class="">
+            Logo
+        </div>
+        <div class="">
+            navigation
+        </div>
+    </header>
 
-            <section class="result">
-                <strong>Form Results:</strong>
-                <div>Text: <span id="text"></span></div>
-                <div>Agreement: <span id="agreement"></span></div>
-                <div>Subjectivity: <span id="subjectivity"></span></div>
-                <div>Confidence: <span id="confidence"></span></div>
-                <div>Irony: <span id="irony"></span> </div>
-                <div>Score_tag: <span id="score_tag"></span></div>
-              </section>
-        </main>
+    <main>
+        <section>
+            <form class="" onsubmit="return Client.handleSubmit(event)">
+                <input id="name" type="text" name="input" placeholder="Name">
+                <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)"
+                    onsubmit="return Client.handleSubmit(event)">
+            </form>
+        </section>
 
-        <footer>
-            <p>This is a footer</p>
-        </footer>
+        <section class="result">
+            <strong>Form Results:</strong>
+            <div>Text: <span id="text"></span></div>
+            <div>Agreement: <span id="agreement"></span></div>
+            <div>Subjectivity: <span id="subjectivity"></span></div>
+            <div>Confidence: <span id="confidence"></span></div>
+            <div>Irony: <span id="irony"></span> </div>
+            <div>Score_tag: <span id="score_tag"></span></div>
+        </section>
+    </main>
 
-    </body>
+    <footer>
+        <p>This is a footer</p>
+    </footer>
+    <script>
+        // Check that service workers are supported
+        if ('serviceWorker' in navigator) {
+            // Use the window load event to keep the page load performant
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+            })
+        }
+    </script>
+</body>
+
 </html>
