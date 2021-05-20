@@ -26,20 +26,21 @@ let score_tag=document.getElementById('score_tag')
 
 function handleSubmit(event) {
     event.preventDefault()
-    
+
     let formText = document.getElementById('name').value
     
     console.log("::: Form Submitted :::")
-
-    fetchBack('http://localhost:8082/api',{url:formText}).then((res)=>{
-        text.innerHTML=res.text
-        agreement.innerHTML=res.agreement
-        subjectivity.innerHTML=res.subjectivity
-        confidence.innerHTML=res.confidence
-        irony.innerHTML=res.irony
-        score_tag.innerHTML=res.score_tag
-    })
-    
+    if(Client.validURL(formText))
+        fetchBack('http://localhost:8082/api',{url:formText}).then((res)=>{
+            text.innerHTML=res.text
+            agreement.innerHTML=res.agreement
+            subjectivity.innerHTML=res.subjectivity
+            confidence.innerHTML=res.confidence
+            irony.innerHTML=res.irony
+            score_tag.innerHTML=res.score_tag
+        })
+    else
+        alert('Enter a valid URl')
     
 }
 
